@@ -11,12 +11,12 @@ Graph init_graph(int n, Vertex origem, Vertex destino, double demanda){
   Vertex v;
   g->n = n; /*inicializa o numero de vertices*/
   g->m = 0; /*inicialmente, nao temos nenhum arco*/
-  g->adj = malloc(sizeof(list)*n); /*alocamos espaco para o vetor d listas*/
+  g->adj = malloc(sizeof(list)*n); /*alocamos espaco para o vetor de listas*/
   for(v = 0; v < n; v++) /*como ainda nao ha nenhum arco, setamos todas as listas para null*/
     g->adj[v] = NULL; 
   g->origem = origem; /*seta a origem do fluxo*/
   g->destino = destino; /*seta o destino final do fluxo*/
-  g->demanda = demanda; /*seta qunto de produto passa pelo grafo*/
+  g->demanda = demanda; /*seta quanto de produto passa pelo grafo*/
   
   return g;
 }
@@ -39,7 +39,7 @@ Arc is_arc(Graph g, Vertex u, Vertex v){/*CHECA SE UM ARCO u->v EXISTE*/
   for(l = g->adj[u]; l != NULL; l = l->next){/*percorre a lista de adjacencia de u*/
     Arc x = l->arco; /*pega o arco associado aquela posicao na lista*/
     if(x->ini == u && x->dest == v && x->cost != inf ) /*se e um arco nao artificial de u para v
-							existe, ele eh retornado.*/
+							existe, ele é retornado.*/
       return x;
   }
   return null; /*o arco nao existe*/
