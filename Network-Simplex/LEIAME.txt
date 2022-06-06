@@ -1,5 +1,3 @@
-O EP INCLUI 6 MODULOS e 11 ARQUIVOS-FONTE:
-
 -arvore.h e arvore.c - definem a estrutura e funcoes que manipulam a arvore da solucao
 -grafo.h e grafo.c   - definem a estrutura e funcoes que manipulam o grafo
 -lerEntrada.h e lerEntrada.c - definem a funcao que faz leitura do arquivo de entrada
@@ -7,9 +5,7 @@ O EP INCLUI 6 MODULOS e 11 ARQUIVOS-FONTE:
 -simplex.h e simplex.c - definem as funcoes necessarias para o simplex de rede (achar arco de entrada, de saida, atualizar a arvore e calcular potenciais)
 -ep.c - junta tudo, executa o simplex, acha uma solucao otima e escreve sua descricao no arquivo de saida. No caso de problema inviavel, avisa isso no terminal.
 
-O MAKEFILE FOI INCLUSO. BASTA DIGITAR make NO TERMINAL PARA COMPILAR.
-
-PARA RODAR O PROGRAMA, DIGITAR ./ep <NomeDoArquivoDeEntrada> <NomeDoArquivoDeSaida>.
+DIGITAR ./ep <NomeDoArquivoDeEntrada> <NomeDoArquivoDeSaida>.
 
 SE O PROBLEMA DESCRITO NA ENTRADA FOR INVIAVEL, NAO SERA CRIADO NENHUM ARQUIVO DE SAIDA. SERA DITO NA SAIDA PADRA (O TERMINAL) QUE O PROBLEMA E INVIAVEL E NAO POSSUI SOLUCAO.
 
@@ -18,7 +14,7 @@ CASO O PROBLEMA SEJA VIAVEL, A FORMA DO ARQUIVO DE SAIDA E A SEGUINTE:
 O ARQUIVO DE SAIDA TERA UMA DESCRICAO DO GRAFO DA SEGUINTE FORMA:
 
 VERTICE:
-	VERTICE-QUE-EH-PONTA-DE-CHEGADA-UMA-ARESTA-SAINDO-DE-V - CUSTO - FLUXO
+	VERTICE-PONTA-DE-CHEGADA-UMA-ARESTA-SAINDO-DE-V - CUSTO - FLUXO
 
 (OU SEJA, PARA CADA VERTICE, IMPRIMIMOS VERTICES QUE SAO PONTAS DE CHEGADA DE UMA ARCO SAINDO DO VERTICE, O CUSTO DO ARCO QUE CONECTA ESSES DOIS VERTICES E O FLUXO QUE PASSA POR ESSE ARCO)
 
