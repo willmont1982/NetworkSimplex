@@ -26,8 +26,8 @@ struct grafo{
   int m; /*numero de arcos*/
   int n; /*numero de vertices*/
   list* adj; /*vetor de listas de adjacencia*/
-  Vertex origem; /*guarda qual eh o no de origem na rede*/
-  Vertex destino; /*guarda qual eh o no de desino na rede*/
+  Vertex origem; /*guarda qual é o nó de origem na rede*/
+  Vertex destino; /*guarda qual é o nó de desino na rede*/
   double demanda; /*armazena a quantidade de produto escoado pela rede*/
 };
 
