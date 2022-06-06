@@ -13,20 +13,20 @@ Arvore init_tree(int n){
   t->n = n;
   t->pais = malloc(sizeof(Vertex)*t->n);
   for(v = 0; v < t->n; v++)
-    t->pais[v] = v; /*a arvore ainda nao foi construida: cada vertice eh seu proprio pai*/
+    t->pais[v] = v; /*a arvore ainda nao foi construida: cada vertice é seu proprio pai*/
   t->profundidade = malloc(sizeof(int)*t->n);
   for(v = 0; v < t->n; v++)
-    t->profundidade[v] = 1; /*inicialmente nao ha raiz, entao pronfudidades sao 1*/
+    t->profundidade[v] = 1; /*inicialmente nao ha raiz, entao as pronfudidades sao 1*/
   t->arvore = malloc(sizeof(Arc)*(t->n));
   for(v = 0; v < t->n; v++)
     t->arvore[v] = NULL; /*como a arvore ainda nao foi montada, os arcos pai sao NULL*/
   t->y = malloc(sizeof(double)*t->n);
   for(v = 0; v < t->n; v++)
-    t->y[v] = 0; /*Os potenciais comecao inicializados com zero por padrao. Depois de motada a arvore muda-se isso.*/
+    t->y[v] = 0; /*Os potenciais começaram inicializados com zero por padrao. Depois de construida a arvore, temos a alteração dos arcos.*/
   return t;
 }
 
-/*Verifica se u->v eh um arco da arvore. Se for, devolve u->v, caso contrario, devolve null*/
+/*Verifica se u->v é um arco da arvore. Se for, devolve u->v, caso contrario, devolve null*/
 Arc is_tree_arc(Arvore g, Vertex u, Vertex v){
   int i;
   Arc x;
@@ -47,7 +47,7 @@ void set_parent(Arvore g, Vertex u, Vertex v, Arc x){
   x->inTree = 1;
 }
 
-/*um simples getter para o pai*/
+/*getter para o pai*/
 Vertex prnt(Arvore g, Vertex v){
   return g->pais[v];
 }
@@ -87,7 +87,7 @@ void show_tree(Arvore g, FILE *output){
   fputs("\n",output);
 }
 
-/*imprime o caminho entre vertices u e v e qual aresta sai da base se colocamos o arco u->v*/
+/*imprime o caminho entre vertices u e v Verificando qual aresta sai da base se colocarmos o arco u->v*/
 void show_path(Arvore g, Arc e, FILE *output){
   Vertex *path = null;
   Arc x;
