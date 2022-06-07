@@ -23,7 +23,7 @@ int main(int argc, char** argv){
   }
   g = le_entrada(entrada); /*constroi o grafo de acordo com as especificacoes da entrada*/
   t = acha_solucao_inicial(g); /*acha uma solucao viavel resolvendo o problema auxiliar*/
-  viavel = checa_viabilidade(t); /*checa se a solucao encontrada no problema auxiliar eh uma
+  viavel = checa_viabilidade(t); /*checa se a solucao encontrada no problema auxiliar é uma
 				  solucao viavel do problema que queremos resolver*/
   if( !viavel ){
     puts("O problema entrado e inviavel e nao possui solucao. Nao foi criado o arquivo de saida.");
