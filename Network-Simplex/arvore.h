@@ -24,7 +24,7 @@ struct tree{
 tem o seguinte vetor de pais:
       i: 0 1 2 3 4 5
 pais[i]: 4 1 5 5 5 1
-(note que a raiz eh o vertice v com pais[v] = v;)
+(note que a raiz é o vertice v com pais[v] = v;)
 e de profundidade:
               i: 0 1 2 3 4 5
 profundidade[i]: 4 1 3 3 3 1
