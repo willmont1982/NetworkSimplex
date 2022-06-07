@@ -15,7 +15,7 @@ double inf = 1.0/0.0;
  for(v = 0; v < g->n; v++){
    for(l = g->adj[v]; l != null; l = l->next){
      e = l->arco;
-     /*Um arco (i,j) eh candidato a entrar na base se y[i] - y[j] > custo de (i,j). Essa formula eh adaptado do Chvatal.*/
+     /*Um arco (i,j) candidato a entrar na base se y[i] - y[j] > custo de (i,j)*/
      if((t->y[e->ini] -  t->y[e->dest] > e->cost) && !e->inTree && e->cost != inf){ 
        x = e;
        return x; /*devolve o candidato a entrar na base*/
@@ -66,7 +66,7 @@ Arc tree_path(Arvore g, Arc entry, Vertex** pshow, int* s){
 	}
       }
       else{
-	new->next = diretos; /*o arco eh adicionado na lista de arcos diretos*/
+	new->next = diretos; /*o arco é adicionado na lista de arcos diretos*/
 	diretos = new;
       }
       i = i + 1;
@@ -112,7 +112,7 @@ Arc tree_path(Arvore g, Arc entry, Vertex** pshow, int* s){
     newv->arco = xv;
     newu->arco = xu;
     
-    if(xv->ini != vpath[j]){ /*eh um arco reverso*/
+    if(xv->ini != vpath[j]){ /*é um arco reverso*/
       newv->next = reversos;
       reversos = newv;
       if(xv->fluxo < minflow){
@@ -125,7 +125,7 @@ Arc tree_path(Arvore g, Arc entry, Vertex** pshow, int* s){
       diretos = newv;
     }
     
-    if(xu->ini == upath[i]){ /*eh um arco reverso*/
+    if(xu->ini == upath[i]){ /*é um arco reverso*/
       newu->next = reversos;
       reversos = newu;
       if(xu->fluxo < minflow){
@@ -178,7 +178,7 @@ Arc tree_path(Arvore g, Arc entry, Vertex** pshow, int* s){
 /*
   Atualiza o vetor de pais e o vetor de arcos da arvore. Recebe como entrada uma arvore antiga
   e um arco que esta sendo adicionado a ela, entao descobre o caminho entre suas extremidades,
-  qual eh o arco de saida (que eh removido da arvore na funcao tree_path) e atualizamos o vetor
+  qual é o arco de saida (que é removido da arvore na funcao tree_path) e atualizamos o vetor
   de pais conforme o necessario.
 */
 void update_prnt(Arvore g, Arc entry){
@@ -219,7 +219,7 @@ void update_prnt(Arvore g, Arc entry){
     path = reverse_path(path, size);
   
   /*descobrimos a posicao de f1, f2 e da raiz no caminho (se a raiz nao
-   esta no caminho, sua posicao eh "infinito".*/
+   esta no caminho, sua posicao é "infinita".*/
   for(i = 0; i < size; i++){
     if(path[i] == root) posroot = i;
     if(path[i] == f2) posf2 = i;
@@ -293,7 +293,7 @@ void update_y(Arvore g){
   Vertex root, v;
   Arc x;
   int i;
-  /*atualizado eh um vetor auxiliar. atualizado[i] = 1 se o vertice i ja teve seu
+  /*atualizado é um vetor auxiliar. atualizado[i] = 1 se o vertice i ja teve seu
    potencial atualizado e eh 0 caso ainda precisemos atualizar y[i].*/
   int *atualizado = malloc(sizeof(int)*g->n);
   /*falta guara quantos vertices ainda precisamos atualizar*/
